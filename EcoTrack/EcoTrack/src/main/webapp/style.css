@@ -1,0 +1,344 @@
+@charset "UTF-8";
+/* General Styles */
+ody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('/C:/Users/arpit/MyEclipseProject/EcoTrack/src/main/webapp/leaves-4176219.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-repeat: no-repeat; 
+}
+
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="number"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Results Section */
+/* Results Section */
+#results {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#results h2 {
+    color: #27ae60;
+    margin-bottom: 15px;
+}
+
+#results p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#results .tip {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-left: 3px solid #e67e22;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+#results .tip h3 {
+    color: #e67e22;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+#results .tip p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Leaderboard Section */
+#leaderboard {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+#leaderboard h2 {
+    color: #e67e22;
+}
+
+#leaderboard p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    input[type="number"], button {
+        font-size: 0.9rem;
+    }
+}
+/* Payment Section */
+.payment-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-left: 5px solid #3498db;
+    text-align: center;
+}
+
+.payment-details {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.payment-details strong {
+    color: #3498db;
+}
+
+/* Advanced Tips Section */
+.advanced-tips-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    border-left: 5px solid #27ae60;
+}
+
+.advanced-tips-section .tip {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-left: 3px solid #e67e22;
+}
+
+.advanced-tips-section .tip h3 {
+    color: #e67e22;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.advanced-tips-section .tip p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Paid Section Link */
+.paid-section-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paid-section-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.paid-section-link a:hover {
+    text-decoration: underline;
+}
+/* Donation Section */
+.donation-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-left: 5px solid #27ae60;
+    text-align: center;
+}
+
+.donation-details {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.donation-details strong {
+    color: #27ae60;
+}
+
+.donation-instructions {
+    margin: 20px 0;
+    text-align: left;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border-left: 3px solid #3498db;
+}
+
+.donation-instructions h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.donation-instructions ol {
+    padding-left: 20px;
+}
+
+.donation-instructions li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.thank-you {
+    font-size: 1.2rem;
+    color: #27ae60;
+    margin-top: 20px;
+}
+
+/* Donation Section Link */
+.donation-section-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.donation-section-link a {
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.donation-section-link a:hover {
+    text-decoration: underline;
+}
+/* Advanced Tips Section */
+.advanced-tips-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    border-left: 5px solid #27ae60;
+}
+
+.advanced-tips-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.advanced-tips-section .tip {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 15px;
+    border-left: 3px solid #3498db;
+}
+
+.advanced-tips-section .tip h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.advanced-tips-section .tip p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.advanced-tips-section .tip i {
+    margin-right: 10px;
+    color: #27ae60;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTrack - Carbon Footprint Tracker</title>
+    <link rel="stylesheet" href="style.css">
+      
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body >
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>EcoTrack: Carbon Footprint Tracker</h1>
+            <p class="tagline">Track Your Carbon Footprint and Make a Difference!</p>
+        </header>
+
+        <!-- Form Section -->
+        <section class="form-section">
+            <h2>Calculate Your Carbon Footprint</h2>
+            <p>Enter your daily activities to calculate your carbon footprint:</p>
+            <form id="activityForm">
+                <div class="form-group">
+                    <label for="milesDriven"><i class="fas fa-car"></i> Miles Driven</label>
+                    <input type="number" id="milesDriven" name="milesDriven" placeholder="e.g., 50 miles" required>
+                </div>
+                <div class="form-group">
+                    <label for="electricityUsed"><i class="fas fa-lightbulb"></i> Electricity Used (kWh)</label>
+                    <input type="number" id="electricityUsed" name="electricityUsed" placeholder="e.g., 100 kWh" required>
+                </div>
+                <div class="form-group">
+                    <label for="mealsConsumed"><i class="fas fa-utensils"></i> Meals Consumed</label>
+                    <input type="number" id="mealsConsumed" name="mealsConsumed" placeholder="e.g., 5 meals" required>
+                </div>
+                <button type="button" onclick="calculateFootprint()">
+                    <i class="fas fa-calculator"></i> Calculate Footprint
+                </button>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" class="results-section">
+            <h2>Your Carbon Footprint</h2>
+            <p id="footprintValue">Your carbon footprint will appear here.</p>
+            <div class="tip">
+                <h3>Tips to Reduce Your Footprint</h3>
+                <p id="tipsText">Personalized tips will appear here.</p>
+            </div>
+        </section>
+    </div>
+    <!-- Paid Section Link -->
+<section class="paid-section-link">
+    <p>Want more advanced tips? <a href="paid.html">Click here to unlock advanced tips!</a></p>
+</section>
+<!-- Donation Section Link -->
+<section class="donation-section-link">
+    <p>Support environmental causes! <a href="donate.html">Click here to donate.</a></p>
+</section>
+<footer>
+            <p>Made with <i class="fas fa-heart"></i> by Arpit Sahu | &copy; 2025</p>
+            
+        </footer>
+    <!-- JavaScript -->
+    <script>
+        function calculateFootprint() {
+            // Get input values
+            const milesDriven = parseFloat(document.getElementById('milesDriven').value);
+            const electricityUsed = parseFloat(document.getElementById('electricityUsed').value);
+            const mealsConsumed = parseFloat(document.getElementById('mealsConsumed').value);
+
+            // Validate inputs
+            if (isNaN(milesDriven) || isNaN(electricityUsed) || isNaN(mealsConsumed)) {
+                alert("Please enter valid numbers for all fields.");
+                return;
+            }
+
+            // Calculate carbon footprint (simplified formula)
+            const footprint = (milesDriven * 0.4) + (electricityUsed * 0.6) + (mealsConsumed * 2.5);
+
+            // Display results
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>Your Carbon Footprint</h2>
+                <p>Your carbon footprint is <strong>${footprint.toFixed(2)} kg CO2</strong>.</p>
+                <div class="tip">
+                    <h3>Tips to Reduce Your Footprint</h3>
+                    ${generateTips(footprint)}
+                </div>
+            `;
+        }
+
+        function generateTips(footprint) {
+            let tips = '';
+
+            if (footprint > 50) {
+                tips += `
+                    <p>🚗 <strong>Reduce Driving:</strong> Carpool, use public transportation, or switch to an electric vehicle.</p>
+                    <p>💡 <strong>Save Energy:</strong> Turn off lights and appliances when not in use, and switch to energy-efficient bulbs.</p>
+                    <p>🍴 <strong>Eat Sustainably:</strong> Reduce meat consumption and choose locally sourced, organic foods.</p>
+                `;
+            } else if (footprint > 20) {
+                tips += `
+                    <p>🚲 <strong>Bike or Walk:</strong> Use a bike or walk for short distances instead of driving.</p>
+                    <p>🌱 <strong>Go Green:</strong> Plant trees or support reforestation projects to offset your carbon emissions.</p>
+                    <p>♻️ <strong>Recycle:</strong> Recycle paper, plastic, and glass to reduce waste.</p>
+                `;
+            } else {
+                tips += `
+                    <p>🌟 <strong>Great Job!</strong> Your carbon footprint is below average. Keep up the good work!</p>
+                    <p>🌍 <strong>Spread Awareness:</strong> Encourage friends and family to reduce their carbon footprint.</p>
+                `;
+            }
+
+            return tips;
+        }
+    </script>
+</body>
+</html>
