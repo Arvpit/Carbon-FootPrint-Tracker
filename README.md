@@ -22,10 +22,4 @@ Track, monitor, and reduce the environmental impact of your web development proj
 
 ---
 
-## 📦 Installation
-
-```bash
-git clone https://github.com/arvpit/carbon-footprint-tracker.git
-cd carbon-footprint-tracker
-npm install
-npm start
+**Link** https://github.com/arvpit/carbon-footprint-tracker.git
